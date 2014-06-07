@@ -1,35 +1,35 @@
-title:            HPSTR Theme
-description:      A responsive Jekyll theme with modern tendencies from designer Michael Rose.
-disqus_shortname: hpstrtheme
+title:            小憩
+description:      
+disqus_shortname: Blog
 #Comment out url when working locally to resolve base urls correctly
-url:              http://mmistakes.github.io/hpstr-jekyll-theme
+url:              http://sinlaputa.github.io
 
 # Owner/author information
 owner:
-  name:           Michael Rose
+  name:           sinlaputa
   avatar:         avatar.jpg
-  bio:            "Just another boring, tattooed, time traveling designer hailing from Buffalo New York."
-  email:          michael@mademistakes.com
+  bio:            "世间所有的相遇都是久别重逢"
+  email:          sinlaputa@gmail.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        mmistakes
-  facebook:       
-  github:         mmistakes
-  stackexchange:  
-  linkedin:       
-  instagram:        
-  flickr:         
-  tumblr:         
+  twitter:        sinlaputa
+  facebook:
+  github:         sinlaputa
+  stackexchange:
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    http://plus.google.com/118238196859537351707
+  google_plus:
 
 # Background image to be tiled on all pages
 background:
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-2011187-5
-google_verify:      
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
@@ -41,7 +41,7 @@ links:
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Asia/Chongqing
 future:      true
 hihglighter: pygments
 markdown:    kramdown
@@ -50,7 +50,7 @@ markdown:    kramdown
 permalink:   /:categories/:title/
 
 # Amount of post to show on home page
-paginate: 5
+paginate: 3
 
 kramdown:
   auto_ids: true
