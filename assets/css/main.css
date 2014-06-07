@@ -3748,7 +3748,7 @@ body {
 
 .entry,
 .hentry {
-  *zoom: 1;
+  *zoom: 0.1;
 }
 
 .entry:before,
@@ -3786,6 +3786,7 @@ body {
 .entry-header {
   position: relative;
   width: 100%;
+  height: 200px;
   overflow: hidden;
 }
 
