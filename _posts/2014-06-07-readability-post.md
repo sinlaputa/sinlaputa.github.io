@@ -5,7 +5,7 @@ description: "Custom written post descriptions are the way to go... if you're no
 tags: [sample post, readability]
 modified: 2014-06-07
 image:
-  feature: abstract-7.jpg
+  feature: post.jpg
   credit: dargadgetz
   creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 ##comments: true

@@ -3,9 +3,9 @@ layout: post
 title: "Python函数参数传递方式"
 description: "说明python中函数参数方式，备忘"
 tags: [python, function parameter]
-modified: 2014-06-07
+modified: 2014-06-08
 image:
-  feature: abstract-7.jpg
+  feature: post.jpg
   credit: dargadgetz
   creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 ##comments: true
