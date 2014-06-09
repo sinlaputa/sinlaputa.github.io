@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Post with Large Feature Image and Text"
-description: "Custom written post descriptions are the way to go... if you're not lazy."
-tags: [sample post, readability]
+title: "Python函数参数传递方式"
+description: "说明python中函数参数方式，备忘"
+tags: [python, function parameter]
 modified: 2014-06-07
 image:
   feature: abstract-7.jpg
