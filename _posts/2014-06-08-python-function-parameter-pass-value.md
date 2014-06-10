@@ -1,35 +1,58 @@
 ---
 layout: post
-title: "Python函数参数传递方式，对比C/C++/Java"
-description: "说明python中函数参数方式，备忘"
-tags: [python, function parameter]
-modified: 2014-06-08
+title: "Python函数参数传递方式"
+description: "对比C/C++/Java，说明Python中函数参数方式，备忘"
+tags: [Python, function parameter]
+modified: 2014-06-09
 image:
   feature: abstract-1.jpg
 ##comments: true
 ##share: true
 ---
 
-不同的程序设计语言函数参数的传递不一样，java与C++不同，之后的python又与前两者不同。对于先接触C/C++的程序员，python的函数传递方式并不具有自明性。
+不同的程序设计语言函数参数的传递不一样，Java与C/C++不同，之后的Python又与前两者不同。对于先接触C/C++的程序员，Python的函数传递方式并不具有自明性。
 
-C/C++本身是静态语言，所有的变量都需要先声明后使用，对于一个新生成的对象，必须赋值给对应类型的值，否则会编译出错。对于函数参数的传递，按值传递、按引用传递需要明确指出（按指针传递只是按值传递的一种，只不过赋值的是指针本身的值，可以藉此修改指针指向的内容），不仅如此，类型也必须匹配才行。Java源于C++，保留了C++静态语言的模型，编译运行在JVM虚拟机上，离硬件更远相对来说更抽象（或者说更高级）。Java不在基于指针思考而是围绕着独享，所有的变量都是对对象的引用。值得注意的是，Java中有些类型的对象是不可变的，例如String类型，如要改变String变量的值，需要调用String对象的相关参数然后用返回值对String对象进行重新赋值。
+## C/C++的函数参数传递方式
+C/C++本身是静态语言，所有的变量都需要先声明后使用，对于一个新生成的对象，必须赋值给对应类型的值，否则会编译出错。对于函数参数的传递，按值传递、按引用传递需要明确指出（按指针传递只是按值传递的一种，只不过赋值的是指针本身的值，可以藉此修改指针指向的内容），不仅如此，类型也必须匹配才行。
 
-## Cupidatat 90's lo-fi authentic try-hard
+## Java的函数参数传递方式
+Java源于C++，保留了C++静态语言的模型，编译运行在JVM虚拟机上，语言本身抽象的层级更高。Java不再基于过程而是围绕着对象思考，不再考虑过程中变量、指针的赋值问题而是考虑对象之间的消息传递。
 
-In pug Portland incididunt mlkshk put a bird on it vinyl quinoa. Terry Richardson shabby chic +1, scenester Tonx excepteur tempor fugiat voluptate fingerstache aliquip nisi next level. Farm-to-table hashtag Truffaut, Odd Future ex meggings gentrify single-origin coffee try-hard 90's. 
+Java中的类型可以分为两种：八种基本类型和类类型，除基本类型之外所有的变量都是对对象的引用，函数参数传递过程也依据此划分而有所不同。基本类型是按值传递，函数中的实参实际是传递进来参数的一份拷贝，而类类型是按引用传递，实参和形参指向的是同一个对象，通过形参或者实参变量修改对象的值影响所有变量的取值。
 
-* Sartorial hoodie
-* Labore viral forage
-* Tote bag selvage
-* DIY exercitation et id ugh tumblr church-key
+值得注意的是，Java中有些类型的对象是不可变的，例如String类型，如要改变String变量的值，需要调用String对象的相关方法然后用返回值对String对象进行重新赋值。因而String变量实际指向的是另外一个对象，而非是原来的对象。这样在函数中给String对象的实参赋值之后，不影响形参变量的值。
 
-Incididunt umami sriracha, ethical fugiat VHS ex assumenda yr irure direct trade. Marfa Truffaut bicycle rights, kitsch placeat Etsy kogi asymmetrical. Beard locavore flexitarian, kitsch photo booth hoodie plaid ethical readymade leggings yr.
+## Python的函数参数传递方式
+C/C++/Java不同，Python是动态类型语言，变量本身是没有类型的，类型属于对象本身。用C/C++的逻辑理解，变量相当于是通用指针，指向的是有类型信息的对象。
 
-Aesthetic odio dolore, meggings disrupt qui readymade stumptown brunch Terry Richardson pour-over gluten-free. Banksy american apparel in selfies, biodiesel flexitarian organic meh wolf quinoa gentrify banjo kogi. Readymade tofu ex, scenester dolor umami fingerstache occaecat fashion axe Carles jean shorts minim. Keffiyeh fashion axe nisi Godard mlkshk dolore. Lomo you probably haven't heard of them eu non, Odd Future Truffaut pug keytar meggings McSweeney's Pinterest cred. Etsy literally aute esse, eu bicycle rights qui meggings fanny pack. Gentrify leggings pug flannel duis.
+Python中对象本身携带类型信息，可分为不可变对象和可变对象两种，如int，tuple就属于不可变对象。对于不可对象的赋值，变量将指向新的不可变对象，如果赋值前后两个不可变对象不一样的话。
+{% highlight python %}
+{% raw %}
+>>> a = "a"
+>>> b = a
+>>> print a, b
+a a
+>>> b = "c"
+>>> print a, b
+a c
+>>>
+{% endraw %}
+{% endhighlight %}
 
-## Forage occaecat cardigan qui
+可变对象的赋值相当于引用赋值，两个变量指向的是同一对象。
+{% highlight python %}
+{% raw %}
+>>> a = ["x", "y"]
+>>> b = a
+>>> print a, b
+['x', 'y'] ['x', 'y']
+>>> b[0] = "z"
+>>> print a, b
+['z', 'y'] ['z', 'y']
+>>>
+{% endraw %}
+{% endhighlight %}
 
-Fashion axe hella gastropub lo-fi kogi 90's aliquip +1 veniam delectus tousled. Cred sriracha locavore gastropub kale chips, iPhone mollit sartorial. Anim dolore 8-bit, pork belly dolor photo booth aute flannel small batch. Dolor disrupt ennui, tattooed whatever salvia Banksy sartorial roof party selfies raw denim sint meh pour-over. Ennui eu cardigan sint, gentrify iPhone cornhole. 
+因而对于Python函数参数传递，与其赋值逻辑一样，对于不可变对象，实参和形参首先指向同一个不可变对象，若之后对实参赋值，实参指向新的不可变对象；对于可变对象，形参实参指向的是同一个可变对象，实参的修改影响形参。
 
-> Whatever velit occaecat quis deserunt gastropub, leggings elit tousled roof party 3 wolf moon kogi pug blue bottle ea. Fashion axe shabby chic Austin quinoa pickled laborum bitters next level, disrupt deep v accusamus non fingerstache.
-
+对比于Java，若将java中的基本类型看作不可变对象，以可变对象和不可变对象的观点理解赋值操作，Python和Java在函数参数传递上表现的逻辑是一致的。
