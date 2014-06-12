@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python函数参数传递方式"
-description: "对比C/C++/Java，说明Python中函数参数方式，备忘"
+description: "对比C/C++/Java，说明Python中函数参数传递方式，备忘"
 tags: [Python, function parameter]
 modified: 2014-06-09
 image:
